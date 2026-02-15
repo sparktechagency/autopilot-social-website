@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
+      <body className="bg-linear-to-r from-[#faeeee] via-[#fffcf2] via-[#f8fffb] to-[#DFE9FF]">
         <Navbar />
         {children}
         <Footer />
