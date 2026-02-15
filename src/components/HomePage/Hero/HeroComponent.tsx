@@ -1,8 +1,8 @@
 import React from "react";
-import { poppins } from "../utils/FontPoppins";
+import { poppins } from "../../utils/FontPoppins";
 import { Button } from "@mui/material";
-import HeroImage from "./HeroImage";
 import SocialLinks from "./SocialLinks";
+import HeroImage from "./HeroImage";
 
 export default function HeroComponent() {
   return (
