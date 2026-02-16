@@ -4,6 +4,7 @@ import { Button, ButtonProps } from '@mui/material';
 type ButtonSize = 'small' | 'medium' | 'large';
 type ButtonVariant = 'primary' | 'secondary';
 
+// @ts-ignore
 interface PrimaryButtonProps extends ButtonProps {
   gradientFrom?: string;
   gradientTo?: string;
