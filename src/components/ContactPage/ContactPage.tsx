@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
+import PrimaryButton from '../Shared/PrimaryButton';
 
 export default function ContactPage() {
 
@@ -27,7 +28,7 @@ export default function ContactPage() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                
+
             }}
         >
             <Container maxWidth="xl" className='md:mt-20'>
@@ -37,7 +38,7 @@ export default function ContactPage() {
                         variant="h3"
                         component="h1"
                         fontWeight={800}
-                        
+
                         sx={{
                             fontSize: { xs: '2.1rem', sm: '2.8rem', md: '3.5rem' },
                             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
@@ -68,14 +69,14 @@ export default function ContactPage() {
                 {/* Main content - Form + Image */}
                 <Grid container spacing={4} sx={{ mb: 8 }} justifyContent="center">
                     {/* Image column */}
-                    <Grid size={{xs: 12, md:6}}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Box
                             sx={{
                                 height: { xs: 320, sm: 420, md: '100%' },
                                 borderRadius: 4,
                                 overflow: 'hidden',
                                 boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
-                                position: "relative",                                
+                                position: "relative",
                             }}
                             className="hidden lg:block"
                         >
@@ -92,7 +93,7 @@ export default function ContactPage() {
                     </Grid>
 
                     {/* Form column */}
-                    <Grid size={{xs: 12, md:6}}>
+                    <Grid size={{ xs: 12, md: 6 }}>
                         <Card
                             elevation={6}
                             sx={{
@@ -129,14 +130,14 @@ export default function ContactPage() {
                                     </Box>
 
                                     <Grid container spacing={2}>
-                                        <Grid  size={{xs: 12, md:6}}>
+                                        <Grid size={{ xs: 12, md: 6 }}>
                                             <Typography variant="subtitle2" fontWeight={600} color="text.secondary" mb={1}>
                                                 Email *
                                             </Typography>
                                             <TextField fullWidth type="email" variant="outlined" />
                                         </Grid>
 
-                                        <Grid  size={{xs: 12, md:6}}>
+                                        <Grid size={{ xs: 12, md: 6 }}>
                                             <Typography variant="subtitle2" fontWeight={600} color="text.secondary" mb={1}>
                                                 Phone
                                             </Typography>
@@ -157,27 +158,9 @@ export default function ContactPage() {
                                         />
                                     </Box>
 
-                                    <Button
-                                        size="large"
-                                        variant="contained"
-                                        sx={{
-                                            py: 1.6,
-                                            mt: 2,
-                                            borderRadius: 3,
-                                            fontWeight: 600,
-                                            textTransform: 'none',
-                                            fontSize: '1.05rem',
-                                            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                            '&:hover': {
-                                                background: 'linear-gradient(135deg, #764ba2 0%, #667eea 100%)',
-                                                transform: 'translateY(-2px)',
-                                                boxShadow: '0 12px 30px rgba(102, 126, 234, 0.4)',
-                                            },
-                                            transition: 'all 0.25s ease',
-                                        }}
-                                    >
+                                    <PrimaryButton type="submit" sx={{borderRadius: 2}} size="medium">
                                         Send Message
-                                    </Button>
+                                    </PrimaryButton>                                    
                                 </Box>
                             </CardContent>
                         </Card>
@@ -225,7 +208,7 @@ export default function ContactPage() {
                             gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
                         },
                     ].map((item, index) => (
-                        <Grid size={{xs: 12, sm: 6, md:4}} key={index}>
+                        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
                             <Card
                                 elevation={3}
                                 sx={{
