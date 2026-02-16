@@ -1,21 +1,18 @@
 import React from "react";
-import {
-  Linkedin,
-  Instagram,
-  Facebook,
-  Youtube,
-  Music
-} from "lucide-react";
+import { Linkedin, Instagram, Facebook, Youtube, Music } from "lucide-react";
 import Link from "next/link";
-
 
 export default function Footer() {
   return (
-    <footer style={{ background: "linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%)" }} className="gradient-bg text-white py-12 px-6">
+    <footer
+      style={{
+        background:
+          "linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%)",
+      }}
+      className="gradient-bg text-white py-12 px-6"
+    >
       <div className="max-w-7xl mx-auto">
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="logo-circle">C</div>
@@ -26,39 +23,120 @@ export default function Footer() {
             </p>
           </div>
 
-
           <div>
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-3">
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Features</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Pricing</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Integrations</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Updates</Link></li>
+              <li>
+                <Link
+                  href="features"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="pricing"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="integrations"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Integrations
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="updates"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Updates
+                </Link>
+              </li>
             </ul>
           </div>
-
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">About Us</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Blog</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Careers</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Contact</Link></li>
+              <li>
+                <Link
+                  href="about-us"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="blog"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="careers"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="contact-us"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
-              <li><Link href="/privacy-policy" className="text-blue-200 hover:text-white text-sm">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="text-blue-200 hover:text-white text-sm">Terms of Service</Link></li>
-              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Cookie Policy</Link></li>
-              <li><Link href="/faqs" className="text-blue-200 hover:text-white text-sm">FAQ</Link></li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="cookie-policy"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faqs"
+                  className="text-blue-200 hover:text-white text-sm"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
-
 
         <div className="border-t border-blue-600 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-blue-200 text-sm">
@@ -79,7 +157,7 @@ export default function Footer() {
             <a
               href="#"
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white transition-transform duration-200 hover:-translate-y-1"
+              className="flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white transition-transform duration-200 hover:-translate-y-1"
             >
               <Instagram size={18} />
             </a>
