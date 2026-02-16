@@ -75,7 +75,7 @@ export default function Pricing() {
     <section className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20">
       {/* Header */}
       <div className="text-center mb-14 space-y-3">
-        <h1 className="text-2xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+        <h1 className="text-2xl sm:text-5xl font-semibold text-gray-900 tracking-tight">
           Simple, Transparent{" "}
           <span
             style={{
