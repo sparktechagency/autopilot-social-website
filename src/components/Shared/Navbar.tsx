@@ -68,7 +68,7 @@ export default function Navbar() {
               Pricing
             </Link>
             <Link
-              href="/contact"
+              href="/contact-us"
               className={`${scrolled ? "text-white" : "text-gray-600"} px-5 py-2 text-sm font-medium hover:bg-gray-100 hover:text-gray-900 rounded-full transition-all duration-200`}
             >
               Contact
@@ -134,28 +134,28 @@ export default function Navbar() {
       >
         <div className="bg-white rounded-2xl p-4 shadow-lg">
           <Link
-            href="#home"
+            href="/"
             onClick={() => setIsMenuOpen(false)}
             className="block px-4 py-3 text-gray-800 text-sm font-medium hover:bg-gray-100 rounded-lg transition-colors duration-200"
           >
             Home
           </Link>
           <Link
-            href="#features"
+            href="features"
             onClick={() => setIsMenuOpen(false)}
             className="block px-4 py-3 text-gray-800 text-sm font-medium hover:bg-gray-100 rounded-lg transition-colors duration-200"
           >
             Features
           </Link>
           <Link
-            href="#pricing"
+            href="pricing"
             onClick={() => setIsMenuOpen(false)}
             className="block px-4 py-3 text-gray-800 text-sm font-medium hover:bg-gray-100 rounded-lg transition-colors duration-200"
           >
             Pricing
           </Link>
           <Link
-            href="#business"
+            href="business"
             onClick={() => setIsMenuOpen(false)}
             className="block px-4 py-3 text-gray-800 text-sm font-medium hover:bg-gray-100 rounded-lg transition-colors duration-200"
           >
