@@ -6,6 +6,7 @@ import {
   Youtube,
   Music
 } from "lucide-react";
+import Link from "next/link";
 
 
 export default function Footer() {
@@ -29,10 +30,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Features</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Pricing</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Integrations</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Updates</a></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Features</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Pricing</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Integrations</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Updates</Link></li>
             </ul>
           </div>
 
@@ -40,19 +41,20 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">About Us</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Blog</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Careers</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Contact</a></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">About Us</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Blog</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Careers</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Privacy Policy</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Terms of Service</a></li>
-              <li><a href="#" className="text-blue-200 hover:text-white text-sm">Cookie Policy</a></li>
+              <li><Link href="/privacy-policy" className="text-blue-200 hover:text-white text-sm">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="text-blue-200 hover:text-white text-sm">Terms of Service</Link></li>
+              <li><Link href="#" className="text-blue-200 hover:text-white text-sm">Cookie Policy</Link></li>
+              <li><Link href="/faqs" className="text-blue-200 hover:text-white text-sm">FAQ</Link></li>
             </ul>
           </div>
         </div>

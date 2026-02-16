@@ -15,6 +15,7 @@ import {
 
 
 import { FcGoogle } from 'react-icons/fc';
+import PrimaryButton from '../Shared/PrimaryButton';
 
 
 const LoginPage = () => {
@@ -102,14 +103,18 @@ const LoginPage = () => {
                                 />
                             </Box>
 
-                            <Button
+                            {/* <Button
                                 type="submit"
                                 size="large"
                                 variant="contained"
                                 fullWidth
                             >
+
+                            </Button> */}
+                            <PrimaryButton  type="submit"
+                                size="medium" className='rounded-lg!'>
                                 Login
-                            </Button>
+                            </PrimaryButton>
                         </Box>
 
                         <Divider />
