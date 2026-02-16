@@ -2,6 +2,7 @@
 import { Button } from '@mui/material';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import PrimaryButton from './PrimaryButton';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,7 +74,7 @@ export default function Navbar() {
         </div>
 
         {/* User Avatar - Desktop */}
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-3">
           <div className="w-12 h-12 rounded-full overflow-hidden cursor-pointer border-2 border-white shadow-md hover:scale-105 transition-transform duration-200">
             <img
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=John"
@@ -82,8 +83,10 @@ export default function Navbar() {
             />
           </div>
 
-          <Link href="/login"><Button variant='contained'>Login</Button></Link>
-           <Link href="/signup"><Button variant='outlined'>Signup</Button></Link>
+          <Link href="/login" >          
+          <PrimaryButton size="small">Login</PrimaryButton>
+          </Link>
+           <Link href="/signup"><Button size='large' variant='outlined'  className='rounded-full! capitalize! px-8!'>Signup</Button></Link>
         </div>
 
         {/* Mobile Menu Button & Avatar */}
