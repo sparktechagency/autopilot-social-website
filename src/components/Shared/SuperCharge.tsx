@@ -151,13 +151,7 @@ function OrbitIcon({
 /* ─── Main Component ─────────────────────────────────────────────────── */
 export default function SuperchargeCTA() {
   return (
-    <section
-      className="w-full overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(120deg, #fce4d8 0%, #fdf0e8 25%, #eef6ed 65%, #ddf0e8 100%)",
-      }}
-    >
+    <section className="w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 py-16 sm:py-20 flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* ── Left: Copy ── */}
         <div className="flex-1 max-w-xl space-y-5">

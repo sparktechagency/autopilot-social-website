@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 'use client'
 import { Button } from '@mui/material';
 import Link from 'next/link';
@@ -34,7 +35,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center gap-3 cursor-pointer">
-          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center font-bold text-xl text-white">
+          <div className="w-10 h-10 bg-linear-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center font-bold text-xl text-white">
             C
           </div>
           <span className="text-2xl font-bold text-gray-800">
