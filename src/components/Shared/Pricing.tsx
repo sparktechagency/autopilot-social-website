@@ -75,7 +75,7 @@ export default function Pricing() {
     <section className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20">
       {/* Header */}
       <div className="text-center mb-14 space-y-3">
-        <h1 className="text-2xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+        <h1 className="text-2xl sm:text-5xl font-semibold text-gray-900 tracking-tight">
           Simple, Transparent{" "}
           <span
             style={{
@@ -167,7 +167,7 @@ export default function Pricing() {
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
                   <span
-                    className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
+                    className={`mt-0.5 shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
                       plan.featured
                         ? "bg-blue-100 text-blue-600"
                         : "bg-gray-100 text-gray-500"

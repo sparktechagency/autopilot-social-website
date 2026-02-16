@@ -12,7 +12,7 @@ export default function HeroComponent() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className="min-h-[70vh] flex flex-col gap-6 md:gap-8 items-center justify-center py-12 px-4 md:pb-20 md:pt-48 md:px-8 text-center"
+      className="min-h-[70vh] flex flex-col gap-4 md:gap-8 items-center justify-center px-4 md:pb-20 pt-24 md:pt-48 md:px-8 text-center"
     >
       <p
         className={`${poppins.className} font-semibold text-2xl md:text-5xl lg:text-6xl tracking-tight`}
