@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import { FaHeart, FaRegComment } from "react-icons/fa";
 import { MdShare } from "react-icons/md";
@@ -140,7 +141,7 @@ export default function HowItWorks() {
           <div className="flex flex-col gap-5 sm:gap-6">
             {steps.map((step, index) => (
               <div key={index} className="flex items-center gap-4 sm:gap-5">
-                <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#0A0A0A] to-[#155DFC] text-white rounded-xl flex items-center justify-center font-bold text-base sm:text-lg shadow-md">
+                <div className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-r from-[#0A0A0A] to-[#155DFC] text-white rounded-xl flex items-center justify-center font-bold text-base sm:text-lg shadow-md">
                   {index + 1}
                 </div>
                 <div>
