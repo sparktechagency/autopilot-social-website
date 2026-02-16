@@ -75,7 +75,7 @@ export default function Pricing() {
     <section className="min-h-screen w-full flex flex-col items-center justify-center px-4 py-20">
       {/* Header */}
       <div className="text-center mb-14 space-y-3">
-        <h1 className="text-2xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+        <h1 className="text-2xl sm:text-5xl font-semibold text-gray-900 tracking-tight">
           Simple, Transparent{" "}
           <span
             style={{
@@ -93,7 +93,7 @@ export default function Pricing() {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-5xl items-stretch">
         {plans.map((plan) => (
           <div
             key={plan.name}
@@ -128,7 +128,7 @@ export default function Pricing() {
 
             {/* Price */}
             <div className="flex items-end gap-1">
-              <span className="text-5xl font-bold text-[#101828] leading-none">
+              <span className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#101828] leading-none">
                 ${plan.price.monthly}
               </span>
               <span className="text-[#4A5565] text-sm ">
@@ -167,7 +167,7 @@ export default function Pricing() {
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
                   <span
-                    className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
+                    className={`mt-0.5 shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
                       plan.featured
                         ? "bg-blue-100 text-blue-600"
                         : "bg-gray-100 text-gray-500"
