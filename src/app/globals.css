@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+.glassBg {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +33,18 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+@layer utilities {
+  .section-title {
+    @apply text-3xl lg:text-5xl 2xl:text-6xl  font-semibold 2xl:font-bold mb-6 tracking-tight md:tracking-normal;
+  }
+  .section-subtitle {
+    @apply text-black/75 text-[16px] lg:text-lg  leading-relaxed;
+  }
+  .container {
+    @apply max-w-7xl mx-auto px-4 md:px-5;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
