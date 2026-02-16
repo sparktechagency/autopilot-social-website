@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
-import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -37,7 +36,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center ">
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer">
+        <Link href="/" className="cursor-pointer">
           <Image
             src="/Images/logo.png"
             alt="User Avatar"
@@ -45,7 +44,7 @@ export default function Navbar() {
             height={100}
             className="w-1/3 sm:w-full lg:w-1/2 h-full object-cover"
           />
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex">

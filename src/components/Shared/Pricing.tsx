@@ -167,7 +167,7 @@ export default function Pricing() {
               {plan.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2.5">
                   <span
-                    className={`mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
+                    className={`mt-0.5 shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${
                       plan.featured
                         ? "bg-blue-100 text-blue-600"
                         : "bg-gray-100 text-gray-500"
