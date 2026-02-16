@@ -1,4 +1,5 @@
 import HeroComponent from "@/components/HomePage/Hero/HeroComponent";
+import HowItWorks from "@/components/HomePage/HowItWorks";
 import InstagramBusines from "@/components/HomePage/InstagramBusiness";
 import PlatformOffers from "@/components/HomePage/PlatformOffers";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroComponent />
       <PlatformOffers />
       <InstagramBusines />
+      <HowItWorks />
     </div>
   );
 }
