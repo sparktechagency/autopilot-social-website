@@ -5,8 +5,10 @@ import {
   TextField,
   InputAdornment,
   Box,
+  Alert,
+  AlertTitle,
 } from '@mui/material';
-import { Instagram, Facebook, Music } from 'lucide-react';
+import { Instagram, Facebook, Music, Lightbulb } from 'lucide-react';
 
 type Props = {
   data: any;
@@ -75,6 +77,11 @@ export default function Step4SocialConnect({ data, update }: Props) {
             ),
           }}
         />
+
+        <Alert severity="info"  icon={<Lightbulb size={30} color='#D1A20D'/>}>
+          <AlertTitle fontWeight={700}>Tip</AlertTitle>          
+          Make sure your Instagram is a Business or Creator account to enable posting and analytics.
+        </Alert>
       </Stack>
     </Stack>
   );

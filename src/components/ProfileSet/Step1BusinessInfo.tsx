@@ -9,9 +9,15 @@ type Props = {
 export default function Step1BusinessInfo({ data, update }: Props) {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-      <Typography variant="h6" gutterBottom>
-        Let's start with your business
-      </Typography>
+      <Box>
+        <Typography variant="h6" fontWeight={600} sx={{ paddingBottom: 0 }}>
+          Let's start with your business
+        </Typography>
+        <Typography variant="body2" gutterBottom>
+          This should take less than 5 minutes
+        </Typography>
+      </Box>
+
 
       <TextField
         required

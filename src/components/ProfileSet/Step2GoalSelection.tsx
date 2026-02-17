@@ -1,6 +1,7 @@
 // components/onboarding/steps/Step2GoalSelection.tsx
 import { Box, Typography, Grid } from '@mui/material';
 import GoalCard from './GoalCard';
+import { BriefcaseBusiness, CalendarCheck, ChartNoAxesCombined } from 'lucide-react';
 
 type Props = {
   data: any;
@@ -9,9 +10,9 @@ type Props = {
 
 export default function Step2GoalSelection({ data, update }: Props) {
   const goals = [
-    { value: 'followers', label: 'Grow Followers', icon: 'TrendingUp' },
-    { value: 'leads', label: 'Generate Leads', icon: 'BusinessCenter' },
-    { value: 'bookings', label: 'Drive Bookings', icon: 'CalendarToday' },
+    { value: 'followers', label: 'Grow Followers', icon: ChartNoAxesCombined },
+    { value: 'leads', label: 'Generate Leads', icon: BriefcaseBusiness }, 
+    { value: 'bookings', label: 'Drive Bookings', icon: CalendarCheck },
   ];
 
   return (

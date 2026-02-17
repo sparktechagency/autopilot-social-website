@@ -5,116 +5,100 @@ import {
   Paper,
   List,
   ListItem,
-  ListItemIcon,
-  ListItemText,
   Divider,
+  LinearProgress,
+  Button,
+  Stack,
 } from '@mui/material';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Sparkles } from 'lucide-react';
 
 type Props = {
   data: any;
+  onBack?: () => void;
+  onSubmit?: () => void;
 };
 
-export default function Step6Summary({ data }: Props) {
+export default function Step6Summary({ data, onBack, onSubmit }: Props) {
   const getGoalLabel = () => {
     switch (data.goal) {
       case 'followers':
-        return 'Grow Followers';
+        return 'Followers';
       case 'leads':
-        return 'Generate Leads';
+        return 'Leads';
       case 'bookings':
-        return 'Drive Bookings';
+        return 'Bookings';
       default:
-        return 'Not selected';
+        return '—';
     }
   };
 
+  const connectedSocials = [
+    data.instagram && 'Instagram',
+    data.facebook && 'Facebook',
+    data.tiktok && 'TikTok',
+  ].filter(Boolean);
+
   return (
-    <Box sx={{ textAlign: 'center' }}>
-      <Typography variant="h5" gutterBottom>
+    <Box maxWidth={900} maxHeight={400} mx="auto" overflow="auto">          
+      <Typography variant="h5" fontWeight={700} mb={2}>
         Ready to generate your content!
       </Typography>
 
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
-        One click and your first week content pack will be created
-      </Typography>
-
-      {/* Summary */}
-      <Paper variant="outlined" sx={{ p: 4, mb: 5, textAlign: 'left' }}>
-        <Typography variant="subtitle1" gutterBottom sx={{ mb: 3 }}>
-          Your setup summary
-        </Typography>
-
+      {/* Summary Card */}
+      <Paper variant="outlined" sx={{ p: 4, mb: 3 }}>
         <List disablePadding>
-          <ListItem>
-            <ListItemText
-              primary="Business"
-              secondary={data.businessName || '—'}
-            />
-          </ListItem>
-
-          <Divider />
-
-          <ListItem>
-            <ListItemText primary="Goal" secondary={getGoalLabel()} />
-          </ListItem>
-
-          <Divider />
-
-          <ListItem>
-            <ListItemText
-              primary="Photos"
-              secondary={`${data.photos?.length || 0} uploaded`}
-            />
-          </ListItem>
-
-          <Divider />
-
-          <ListItem>
-            <ListItemText
-              primary="Social profiles connected"
-              secondary={
-                [
-                  data.instagram && 'Instagram',
-                  data.facebook && 'Facebook',
-                  data.tiktok && 'TikTok',
-                ]
-                  .filter(Boolean)
-                  .join(', ') || 'None'
-              }
-            />
-          </ListItem>
+          {[
+            ['Business', data.businessName || '—'],
+            ['Industry', data.industry || '—'],
+            ['Goal', getGoalLabel()],
+            ['Photos', `${data.photos?.length || 0} uploaded`],
+            [
+              'Socials',
+              connectedSocials.length
+                ? connectedSocials.join(', ')
+                : '0 connected',
+            ],
+          ].map(([label, value], index) => (
+            <Box key={label}>
+              <ListItem
+                disableGutters
+                sx={{ py: .8, display: 'flex', justifyContent: 'space-between' }}
+              >
+                <Typography color="text.secondary">{label}:</Typography>
+                <Typography fontWeight={500}>{value}</Typography>
+              </ListItem>
+              {index !== 4 && <Divider />}
+            </Box>
+          ))}
         </List>
       </Paper>
 
       {/* What happens next */}
       <Paper
         sx={{
-          p: 4,
-          bgcolor: 'grey.50',
+          p: 4,          
           borderRadius: 3,
-          textAlign: 'left',
+          background:
+            'linear-gradient(135deg, #f0f7ff 0%, #f6f1ff 100%)',
         }}
       >
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" fontWeight={700} mb={2}>
           What happens next?
         </Typography>
 
-        <List>
+        <Stack spacing={1.5}>
           {[
             'AI analyzes your business and creates a custom brand voice',
-            'Week 1 content pack generated (5 shorts + 2 posts)',
+            'Week 1 content pack generated with 5 shorts + 2 posts',
             'Daily engagement targets and to-do list created',
             'Progress tracking and analytics initialized',
-          ].map((text, i) => (
-            <ListItem key={i} disableGutters>
-              <ListItemIcon sx={{ minWidth: 36 }}>
-                <CheckCircle size={20} color="#16a34a" />
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          ].map((text) => (
+            <Stack direction="row" spacing={1.5} key={text}>
+              <CheckCircle size={20} color="#16a34a" />
+              <Typography>{text}</Typography>
+            </Stack>
           ))}
-        </List>
+        </Stack>
       </Paper>
     </Box>
   );

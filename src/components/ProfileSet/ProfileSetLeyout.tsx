@@ -7,6 +7,9 @@ import Step3PhotoUpload from './Step3PhotoUpload';
 import Step4SocialConnect from './Step4SocialConnect';
 import Step5BusinessDetails from './Step5BusinessDetails';
 import Step6Summary from './Step6Summary';
+import PrimaryButton from '../Shared/PrimaryButton';
+import Step7SetupProgress from './Step7SetupProgress';
+import { useState } from 'react';
 
 type Props = {
   step: number;
@@ -48,6 +51,17 @@ export default function ProfileSetLeyout({
     }
   };
 
+  const [openSetupProgress, setOpenSetupProgress] = useState(false);
+
+  if (openSetupProgress) {
+    return <Step7SetupProgress
+      data={formData}
+      onComplete={() => {
+        // move to next step, show summary, or redirect to dashboard
+        // goToNextStep();
+      }}
+    />
+  }
   return (
     <Paper
       elevation={6}
@@ -59,16 +73,19 @@ export default function ProfileSetLeyout({
       }}
     >
       {/* Header */}
-      <Box sx={{ p: 4, pb: 2,  }}>
-        <Box sx={{display: "flex", justifyContent: "space-between"}}>
-
-        <Typography variant="h5" fontWeight={600}>
-          Welcome to AmpSocial
-        </Typography>
-        <Typography variant="body2" sx={{ opacity: 0.9, mt: 0.5 }}>
-          Step {step} of {totalSteps}
-        </Typography>
+      <Box sx={{ p: 4, pb: 2, }}>
+        <Box>
+          <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+            <Typography variant="h5" fontWeight={600}>
+              Welcome to AmpSocial
+            </Typography>
+            <Button sx={{ fontSize: 10, fontWeight: 600, opacity: 0.9, mt: 0.5, color: "black", border: "1px solid rgba(0,0,0,0.3)", paddingInline: 1, borderRadius: "25px", whiteSpace: "nowrap" }}>
+              Step {step} of {totalSteps}
+            </Button>
+          </Box>
+          {step > 1 && <Typography variant='body2'>See your first week content pack instantly</Typography>}
         </Box>
+
 
         <LinearProgress
           variant="determinate"
@@ -84,54 +101,52 @@ export default function ProfileSetLeyout({
       </Box>
 
       {/* Content */}
-      <Box sx={{ p: { xs: 3, md: 5 } }}>{renderStepContent()}</Box>
+      <Box sx={{ px: { xs: 3, md: 5 } }}>{renderStepContent()}</Box>
 
       {/* Footer */}
       <Box
         sx={{
-          px: 5,
+          px: { xs: 3, md: 5 },
           py: 3,
-          borderTop: 1,
-          borderColor: 'divider',
           display: 'flex',
+          gap: 2,
           justifyContent: step === 1 ? 'flex-end' : 'space-between',
           alignItems: 'center',
         }}
       >
         {step > 1 && (
           <Button
-            startIcon={<ArrowLeft />}
+            size="large"            
             onClick={onBack}
             variant="outlined"
+            sx={{ width: "100%", color: "black", border:"2px solid rgba(0,0,0,0.1)" }}
           >
             Back
           </Button>
         )}
 
         {step < 6 ? (
-          <Button
-            variant="contained"
-            size="large"
-            disabled={!canProceed}
-            onClick={onNext}
-            sx={{ minWidth: 140 }}
-          >
+          <PrimaryButton size="small" variant="secondary"
+            disabled={!canProceed} onClick={onNext} sx={{ width: "100%", borderRadius: "5px" }}>
             Continue
-          </Button>
+          </PrimaryButton>
         ) : (
           <Button
             variant="contained"
             size="large"
             endIcon={<Sparkles />}
-            onClick={() => alert('Generating your content pack... ✨')}
+            onClick={() => setOpenSetupProgress(true)}
             sx={{
               background: 'linear-gradient(45deg, #7c3aed 30%, #a78bfa 90%)',
               minWidth: 240,
+              whiteSpace: "nowrap",
+              px: 10
             }}
           >
             Generate My Content
           </Button>
         )}
+
       </Box>
     </Paper>
   );

@@ -41,11 +41,11 @@ export default function Step3PhotoUpload({ data, update }: Props) {
 
   return (
     <Stack spacing={4}>
-      <Box textAlign="center">
-        <Typography variant="h5" gutterBottom>
-          Upload Product/Service Photos
+      <Box textAlign="left">
+        <Typography variant="body1" fontWeight={600} gutterBottom>
+          Upload Product/Service Photos (Optional but Recommended)
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
           Optional but recommended — these help us create better, more personalized content
         </Typography>
       </Box>
@@ -69,7 +69,7 @@ export default function Step3PhotoUpload({ data, update }: Props) {
         }}
       >
         <input {...getInputProps()} />
-        <Upload  size={24} />
+        <Upload  size={40} style={{marginInline: "auto", color: "#99A1AF"}}/>
         <Typography variant="h6" gutterBottom>
           Click to upload or drag and drop
         </Typography>
