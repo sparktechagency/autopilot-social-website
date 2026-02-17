@@ -73,10 +73,6 @@ const ProfilePage = () => {
     const [tab, setTab] = React.useState(0);
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event: any, newValue: any) => {
-        setValue(newValue);
-    };
-
     return (
         <Box
             sx={{
@@ -84,7 +80,7 @@ const ProfilePage = () => {
                 backgroundImage: "url('/Images/HeroImages/blendHero.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                py: { xs: 6, md: 10, lg:20 },
+                py: { xs: 10, sm:15, lg: 20 },
             }}
         >
             <Container maxWidth="lg">
@@ -106,8 +102,8 @@ const ProfilePage = () => {
                         <Box position="relative">
                             <Avatar
                                 sx={{
-                                    width: 90,
-                                    height: 90,
+                                    width: {xs: 60, sm:70, md: 90},
+                                    height: {xs: 60, sm:70, md: 90},
                                     fontSize: 36,
                                     bgcolor: '#6C63FF',
                                 }}
@@ -138,7 +134,7 @@ const ProfilePage = () => {
                                 john@example.com
                             </Typography>
 
-                            <Stack direction="row" spacing={1} mt={1}>
+                            <Stack direction="row"  spacing={1} mt={1}>
                                 <Chip
                                     label="Owner"
                                     color="primary"
@@ -184,10 +180,6 @@ const ProfilePage = () => {
                     {tab === 2 && <SecurityTab />}
 
                 </Paper>
-
-                {/* ================= Form ================= */}
-
-
             </Container>
         </Box>
     );
