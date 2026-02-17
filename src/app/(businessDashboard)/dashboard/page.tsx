@@ -1,11 +1,12 @@
 "use client";
 
 import ActivityFeed from "@/components/BusinessDashboard/ActivityFeed";
-import Charts from "@/components/BusinessDashboard/Charts";
 import ContentList from "@/components/BusinessDashboard/ContentList";
 import PromoBanner from "@/components/BusinessDashboard/PromoBanner";
 import StatCard from "@/components/BusinessDashboard/StatCard";
 import TaskSection from "@/components/BusinessDashboard/TaskSection";
+import EngagementBreakdownChart from "@/components/utils/Charts/EngagementBreakdownChart";
+import FollowersGrowthChart from "@/components/utils/Charts/FollowerGrowthChart";
 import {
   Users,
   TrendingUp,
@@ -31,7 +32,9 @@ export default function DashboardOverview() {
 
       {/* 2. Today Stats */}
       <section>
-        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">Today</h2>
+        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
+          Today
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <StatCard
             icon={Users}
@@ -59,7 +62,9 @@ export default function DashboardOverview() {
 
       {/* 3. This Week Stats */}
       <section>
-        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">This Week</h2>
+        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
+          This Week
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <StatCard
             icon={Video}
@@ -116,8 +121,9 @@ export default function DashboardOverview() {
       </section>
 
       {/* 5. Charts */}
-      <section className="h-auto min-h-[300px] sm:min-h-[350px] lg:h-96">
-        <Charts />
+      <section className="flex flex-col lg:flex-row gap-2 items-center justify-between h-auto min-h-[300px] sm:min-h-[400px] lg:h-96">
+        <FollowersGrowthChart />
+        <EngagementBreakdownChart />
       </section>
 
       {/* 6. Content & Activity */}
@@ -186,7 +192,9 @@ export default function DashboardOverview() {
               </p>
             </div>
             <div className="text-left sm:text-right">
-              <span className="text-xl sm:text-2xl font-bold text-blue-600">8/25</span>
+              <span className="text-xl sm:text-2xl font-bold text-blue-600">
+                8/25
+              </span>
               <p className="text-xs text-gray-400">Interactions</p>
             </div>
           </div>

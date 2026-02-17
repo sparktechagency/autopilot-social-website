@@ -150,7 +150,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <Link
                     key={tab.href}
                     href={tab.href}
-                    className={`whitespace-nowrap px-2 sm:px-4 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${
+                    className={`px-2 lg:px-8 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${
                       active
                         ? "bg-white text-[#191919] shadow-lg shadow-blue-500/25"
                         : "bg-[#FFFFFF3D] border border-[#E5E5EA] text-white hover:text-white hover:bg-white/10"
