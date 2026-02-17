@@ -73,19 +73,27 @@ export default function Navbar() {
             >
               Contact
             </Link>
+            <Link
+              href="/dashboard"
+              className={`${scrolled ? "text-white" : "text-gray-600"} px-5 py-2 text-sm font-medium hover:bg-gray-100 hover:text-gray-900 rounded-full transition-all duration-200`}
+            >
+              Dashboard
+            </Link>
           </div>
         </div>
 
         {/* User Avatar - Desktop */}
         <div className="hidden md:flex items-center gap-3">
           <div className="w-12 h-12 rounded-full overflow-hidden cursor-pointer border-2 border-white shadow-md hover:scale-105 transition-transform duration-200">
-            <Image
-              src="/Images/testimonial.png"
-              alt="User Avatar"
-              width={100}
-              height={100}
-              className="w-full h-full object-cover"
-            />
+            <Link
+              href="/profile">
+              <Image
+                src="/Images/testimonial.png"
+                alt="User Avatar"
+                width={100}
+                height={100}
+                className="w-full h-full object-cover"
+              /></Link>
           </div>
 
           <Link
@@ -128,9 +136,8 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       <div
-        className={`fixed mx-auto left-1/2 -translate-x-1/2 w-full px-5 md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-96 mt-5" : "max-h-0"
-        }`}
+        className={`fixed mx-auto left-1/2 -translate-x-1/2 w-full px-5 md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-96 mt-5" : "max-h-0"
+          }`}
       >
         <div className="bg-white rounded-2xl p-4 shadow-lg">
           <Link
