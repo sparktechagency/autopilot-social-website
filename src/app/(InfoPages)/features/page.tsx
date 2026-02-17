@@ -4,7 +4,15 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="py-10 sm:py-20 px-2">
+    <div
+      className="py-10 sm:py-20 px-2"
+      style={{
+        backgroundImage: "url('/Images/HeroImages/blendHero.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <PlatformOffers />
       <p className="max-w-sm sm:max-w-4xl mx-auto text-start sm:text-center text-[#4A5565]">
         We built the AmpSocial Growth OS to be your digital marketing
