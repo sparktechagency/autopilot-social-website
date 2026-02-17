@@ -1,5 +1,6 @@
 "use client";
 
+import SuperchargeCTA from "@/components/Shared/SuperCharge";
 import Image from "next/image";
 import { FiTarget, FiEye } from "react-icons/fi";
 
@@ -133,6 +134,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <SuperchargeCTA />
     </main>
   );
 }
