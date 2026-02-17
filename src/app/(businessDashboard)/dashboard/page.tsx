@@ -1,11 +1,12 @@
 "use client";
 
 import ActivityFeed from "@/components/BusinessDashboard/ActivityFeed";
-import Charts from "@/components/BusinessDashboard/Charts";
 import ContentList from "@/components/BusinessDashboard/ContentList";
 import PromoBanner from "@/components/BusinessDashboard/PromoBanner";
 import StatCard from "@/components/BusinessDashboard/StatCard";
 import TaskSection from "@/components/BusinessDashboard/TaskSection";
+import EngagementBreakdownChart from "@/components/utils/Charts/EngagementBreakdownChart";
+import FollowersGrowthChart from "@/components/utils/Charts/FollowerGrowthChart";
 import {
   Users,
   TrendingUp,
@@ -22,17 +23,19 @@ import {
 export default function DashboardOverview() {
   return (
     <div className="flex flex-col gap-8 pb-10">
-      {/* 1. Header is handled in Layout or Page, but we can add a greeting here if needed */}
+      {/* 1. Header */}
       <div className="mb-2">
-        <h1 className="text-3xl font-bold text-gray-900">Hello, Tomas!</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#000000] font-sans">
+          Hello, Tomas!
+        </h1>
       </div>
 
       {/* 2. Today Stats */}
       <section>
-        <h2 className="text-sm font-semibold text-gray-500 mb-4 uppercase tracking-wider">
+        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
           Today
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <StatCard
             icon={Users}
             iconColor="#DB0083 "
@@ -59,10 +62,10 @@ export default function DashboardOverview() {
 
       {/* 3. This Week Stats */}
       <section>
-        <h2 className="text-sm font-semibold text-gray-500 mb-4 uppercase tracking-wider">
+        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
           This Week
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <StatCard
             icon={Video}
             iconColor="#FF040D"
@@ -89,10 +92,10 @@ export default function DashboardOverview() {
 
       {/* 4. Growth Metrics Stats */}
       <section>
-        <h2 className="text-sm font-semibold text-gray-500 mb-4 uppercase tracking-wider">
+        <h2 className="text-base sm:text-lg font-bold text-[#0A0A0A] mb-3">
           Growth Metrics
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <StatCard
             icon={UserPlus}
             iconColor="#8200DB"
@@ -118,8 +121,9 @@ export default function DashboardOverview() {
       </section>
 
       {/* 5. Charts */}
-      <section className="h-96">
-        <Charts />
+      <section className="flex flex-col lg:flex-row gap-2 items-center justify-between h-auto min-h-[300px] sm:min-h-[400px] lg:h-96">
+        <FollowersGrowthChart />
+        <EngagementBreakdownChart />
       </section>
 
       {/* 6. Content & Activity */}
@@ -175,20 +179,22 @@ export default function DashboardOverview() {
         </div>
       </section>
 
-      {/* 7. Today's Progress Bar (Optional context) */}
-      <section className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-between gap-4">
+      {/* 7. Today's Progress Bar */}
+      <section className="bg-white p-4 sm:p-6 rounded-3xl shadow-sm border border-gray-100">
         <div className="flex-1">
-          <div className="flex justify-between items-end mb-2">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-3 gap-2">
             <div>
-              <h3 className="text-lg font-bold text-gray-900">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900">
                 Today&apos;s Progress of Engagement
               </h3>
               <p className="text-xs text-gray-500">
                 Your daily engagement goal
               </p>
             </div>
-            <div className="text-right">
-              <span className="text-2xl font-bold text-blue-600">8/25</span>
+            <div className="text-left sm:text-right">
+              <span className="text-xl sm:text-2xl font-bold text-blue-600">
+                8/25
+              </span>
               <p className="text-xs text-gray-400">Interactions</p>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { LucideIcon } from "lucide-react";
+import { poppins } from "../utils/FontPoppins";
 
 interface StatCardProps {
   icon: LucideIcon;
@@ -38,7 +39,7 @@ export default function StatCard({
         />
       </div>
 
-      <div className="relative flex justify-between items-start">
+      <div className="relative flex justify-between items-start gap-2">
         <div
           className="p-2.5 rounded-xl flex items-center justify-center"
           style={{ color: iconColor }}
@@ -48,7 +49,7 @@ export default function StatCard({
 
         {trend && (
           <div className="flex flex-col items-end">
-            <span className="text-gray-500 text-xs font-medium">{label}</span>
+            <span className="text-[#666666] text-xs font-medium">{label}</span>
             <span className="text-sm font-bold text-gray-900">{trend}</span>
           </div>
         )}
@@ -56,7 +57,11 @@ export default function StatCard({
 
       <div className="relative mt-4">
         {!trend && (
-          <p className="text-gray-500 text-xs font-medium mb-1">{label}</p>
+          <p
+            className={`${poppins.className} text-[#666666] text-xs font-medium mb-1`}
+          >
+            {label}
+          </p>
         )}
         <h3 className="text-2xl font-bold text-gray-900">{value}</h3>
         {subValue && <p className="text-xs text-gray-400 mt-1">{subValue}</p>}
