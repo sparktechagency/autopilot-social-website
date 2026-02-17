@@ -35,22 +35,22 @@ export default function DashboardOverview() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <StatCard
             icon={Users}
-            iconColor="#ec4899"
-            iconBgColor="#fce7f3"
+            iconColor="#DB0083 "
+            circleColor="#FCDFF6"
             label="Reviews Replied"
             value="1,468"
           />
           <StatCard
             icon={TrendingUp}
-            iconColor="#22c55e"
-            iconBgColor="#dcfce7"
+            iconColor="#00A63E"
+            circleColor="#DCFCE7 "
             label="Engagement Progress"
             value="8.9%"
           />
           <StatCard
             icon={CheckCircle}
-            iconColor="#3b82f6"
-            iconBgColor="#dbeafe"
+            iconColor="#E7000B"
+            circleColor="#B1C9FF "
             label="Approvals Pending"
             value="7"
           />
@@ -65,22 +65,22 @@ export default function DashboardOverview() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <StatCard
             icon={Video}
-            iconColor="#ef4444"
-            iconBgColor="#fee2e2"
+            iconColor="#FF040D"
+            circleColor="#FFC8CA"
             label="Shorts Scheduled"
             value="1,468"
           />
           <StatCard
             icon={FileText}
-            iconColor="#eab308"
-            iconBgColor="#fef9c3"
+            iconColor="#F9BF01"
+            circleColor="#FFF6D8 "
             label="Posts Scheduled"
             value="8.9%"
           />
           <StatCard
             icon={CheckSquare}
-            iconColor="#06b6d4"
-            iconBgColor="#cffafe"
+            iconColor="#21B2C2"
+            circleColor="#C4F9FF "
             label="Task Completed"
             value="7"
           />
@@ -95,22 +95,22 @@ export default function DashboardOverview() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <StatCard
             icon={UserPlus}
-            iconColor="#a855f7"
-            iconBgColor="#f3e8ff"
+            iconColor="#8200DB"
+            circleColor="#D4BCFF"
             label="Total Followers"
             value="1,468"
           />
           <StatCard
             icon={Activity}
-            iconColor="#64748b"
-            iconBgColor="#e2e8f0"
+            iconColor="#0A0A0A"
+            circleColor="#DDDDDD "
             label="Engagement Progress"
             value="8.9%"
           />
           <StatCard
             icon={PlayCircle}
-            iconColor="#f97316"
-            iconBgColor="#ffedd5"
+            iconColor="#833711"
+            circleColor="#E3D1C8"
             label="This Week's Content"
             value="7"
           />
@@ -129,7 +129,7 @@ export default function DashboardOverview() {
             items={[
               {
                 id: "1",
-                thumbnail: "/Images/post1.png",
+                thumbnail: "/Images/contentImage.png",
                 title: "5 Tips for Growing Your Business",
                 platform: "Tiktok",
                 views: "15.0K",
@@ -139,7 +139,7 @@ export default function DashboardOverview() {
               },
               {
                 id: "2",
-                thumbnail: "/Images/post2.png",
+                thumbnail: "/Images/contentImage.png",
                 title: "Client Success Story - How Sarah Grew 300%",
                 platform: "Instagram",
                 views: "8.9K",
@@ -149,7 +149,7 @@ export default function DashboardOverview() {
               },
               {
                 id: "3",
-                thumbnail: "/Images/post3.png",
+                thumbnail: "/Images/contentImage.png",
                 title: "Behind the Scenes: A Day in the Life",
                 platform: "Youtube",
                 views: "45.0K",
@@ -159,7 +159,7 @@ export default function DashboardOverview() {
               },
               {
                 id: "4",
-                thumbnail: "/Images/post4.png",
+                thumbnail: "/Images/contentImage.png",
                 title: "Quick Tip Tuesday - Social Media Mistake",
                 platform: "Linkedin",
                 views: "12.0K",

@@ -37,7 +37,7 @@ export default function TaskSection() {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-lg font-bold text-gray-900">Today's Tasks</h3>
+        <h3 className="text-lg font-bold text-gray-900">Today&apos;s Tasks</h3>
          <span className="text-sm font-medium text-gray-400">View All</span>
       </div>
       
