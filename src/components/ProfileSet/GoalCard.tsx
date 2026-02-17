@@ -19,7 +19,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 type Props = {
   label: string;
-  icon: keyof typeof iconMap; // 👈 safer than string
+  icon: any; // 👈 safer than string
   selected: boolean;
   onClick: () => void;
 };
@@ -30,7 +30,7 @@ export default function GoalCard({
   selected,
   onClick,
 }: Props) {
-  const Icon = iconMap[icon];
+  const Icon = icon;
 
   return (
     <Card
@@ -47,13 +47,13 @@ export default function GoalCard({
         },
       }}
     >
-      <CardContent sx={{ textAlign: 'center', py: 5 }}>
+      <CardContent sx={{ textAlign: 'left', py: 5 }}>
         {Icon && (
           <Icon
-            size={48}
+            size={40}            
             strokeWidth={1.75}
             color={selected ? '#7c3aed' : '#64748b'}
-            style={{ marginBottom: 16 }}
+            style={{ marginBottom: 16,  }}
           />
         )}
 
