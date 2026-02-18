@@ -56,9 +56,8 @@ function DrawerNavItem({
     <Link
       href={tab.href}
       style={itemStyle}
-      className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors duration-200 mb-3 ${
-        active ? "text-[#111827]" : "text-white"
-      }`}
+      className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors duration-200 mb-3 ${active ? "text-[#111827]" : "text-white"
+        }`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -133,6 +132,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         backgroundSize: "contain",
         backgroundPosition: "top center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* TOP NAV */}
@@ -150,11 +150,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <Link
                     key={tab.href}
                     href={tab.href}
-                    className={`px-2 lg:px-8 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${
-                      active
+                    className={`px-2 lg:px-8 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${active
                         ? "bg-white text-[#191919] shadow-lg shadow-blue-500/25"
                         : "bg-[#FFFFFF3D] border border-[#E5E5EA] text-white hover:text-white hover:bg-white/10"
-                    }`}
+                      }`}
                   >
                     {tab.name}
                   </Link>
