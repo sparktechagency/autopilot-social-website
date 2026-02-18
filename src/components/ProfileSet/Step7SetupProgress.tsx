@@ -1,14 +1,13 @@
 // components/onboarding/steps/Step6SetupProgress.tsx
-import { useState, useEffect } from 'react';
 import {
     Box,
-    Typography,
-    Paper,
-    LinearProgress,
-    Stack,
     CircularProgress,
+    Paper,
+    Stack,
+    Typography
 } from '@mui/material';
 import { CheckCircle, Sparkles } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 type Props = {
     data: any;
