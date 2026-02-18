@@ -7,6 +7,7 @@ import StatCard from "@/components/BusinessDashboard/StatCard";
 import TaskSection from "@/components/BusinessDashboard/TaskSection";
 import EngagementBreakdownChart from "@/components/utils/Charts/EngagementBreakdownChart";
 import FollowersGrowthChart from "@/components/utils/Charts/FollowerGrowthChart";
+import { LinearProgress } from "@mui/material";
 import {
   Users,
   TrendingUp,
@@ -16,9 +17,12 @@ import {
   CheckSquare,
   UserPlus,
   Activity,
-  Eye,
   PlayCircle,
 } from "lucide-react";
+
+const COMPLETED = 8;
+const TOTAL = 25;
+const PERCENT = Math.round((COMPLETED / TOTAL) * 100);
 
 export default function DashboardOverview() {
   return (
@@ -121,14 +125,14 @@ export default function DashboardOverview() {
       </section>
 
       {/* 5. Charts */}
-      <section className="flex flex-col lg:flex-row gap-2 items-center justify-between h-auto min-h-[300px] sm:min-h-[400px] lg:h-96">
+      <section className="flex flex-col lg:flex-row gap-2 items-center justify-between h-auto min-h-75 sm:min-h-100 lg:h-96">
         <FollowersGrowthChart />
         <EngagementBreakdownChart />
       </section>
 
       {/* 6. Content & Activity */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 h-full">
           <ContentList
             items={[
               {
@@ -174,39 +178,45 @@ export default function DashboardOverview() {
             ]}
           />
         </div>
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 h-full">
           <ActivityFeed />
         </div>
       </section>
 
       {/* 7. Today's Progress Bar */}
       <section className="bg-white p-4 sm:p-6 rounded-3xl shadow-sm border border-gray-100">
-        <div className="flex-1">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-3 gap-2">
-            <div>
-              <h3 className="text-base sm:text-lg font-bold text-gray-900">
-                Today&apos;s Progress of Engagement
-              </h3>
-              <p className="text-xs text-gray-500">
-                Your daily engagement goal
-              </p>
-            </div>
-            <div className="text-left sm:text-right">
-              <span className="text-xl sm:text-2xl font-bold text-blue-600">
-                8/25
-              </span>
-              <p className="text-xs text-gray-400">Interactions</p>
-            </div>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-2">
+          <div>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900">
+              Today&apos;s Progress of Engagement
+            </h3>
+            <p className="text-xs text-gray-500">Your daily engagement goal</p>
           </div>
-
-          {/* Progress Bar */}
-          <div className="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
-            <div className="bg-blue-600 h-full rounded-full w-[32%]"></div>
+          <div className="text-left md:text-right">
+            <span className="text-xl sm:text-2xl font-bold text-[#155DFC]">
+              {COMPLETED}/{TOTAL}
+            </span>
+            <p className="text-xs text-gray-400">Interactions</p>
           </div>
-          <p className="text-right text-xs text-gray-400 mt-2">
-            32% complete • 17 remaining
-          </p>
         </div>
+
+        <LinearProgress
+          variant="determinate"
+          value={PERCENT}
+          sx={{
+            height: 10,
+            borderRadius: 999,
+            backgroundColor: "#f3f4f6",
+            "& .MuiLinearProgress-bar": {
+              borderRadius: 999,
+              backgroundColor: "#155DFC",
+            },
+          }}
+        />
+
+        <p className="text-right text-xs text-gray-400 mt-2">
+          {PERCENT}% complete • {TOTAL - COMPLETED} remaining
+        </p>
       </section>
 
       {/* 8. Winning Patterns */}
@@ -220,60 +230,60 @@ export default function DashboardOverview() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#effef1] p-4 rounded-xl border border-[#bbf7d0]">
+          <div className="p-4 rounded-xl border border-[#0000001A]">
             <div className="flex justify-between items-start mb-2">
               <span className="text-xs text-gray-500 uppercase">Hook Type</span>
-              <span className="bg-white px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
+              <span className="bg-[#ECEEF2] px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
                 2 posts
               </span>
             </div>
             <h4 className="font-bold text-gray-900">
               &quot;How to&quot; tutorials
             </h4>
-            <p className="text-xs text-green-600 font-medium mt-1">
+            <p className="text-xs text-[#00A63E] font-medium mt-1">
               Avg. Engagement: 9.2%
             </p>
           </div>
 
-          <div className="bg-[#effef1] p-4 rounded-xl border border-[#bbf7d0]">
+          <div className="p-4 rounded-xl border border-[#0000001A]">
             <div className="flex justify-between items-start mb-2">
               <span className="text-xs text-gray-500 uppercase">Template</span>
-              <span className="bg-white px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
+              <span className="bg-[#ECEEF2] px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
                 1 post
               </span>
             </div>
             <h4 className="font-bold text-gray-900">
               Problem → Solution format
             </h4>
-            <p className="text-xs text-green-600 font-medium mt-1">
+            <p className="text-xs text-[#00A63E] font-medium mt-1">
               Avg. Engagement: 8.5%
             </p>
           </div>
 
-          <div className="bg-[#effef1] p-4 rounded-xl border border-[#bbf7d0]">
+          <div className="p-4 rounded-xl border border-[#0000001A]">
             <div className="flex justify-between items-start mb-2">
               <span className="text-xs text-gray-500 uppercase">CTA Style</span>
-              <span className="bg-white px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
+              <span className="bg-[#ECEEF2] px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
                 3 posts
               </span>
             </div>
             <h4 className="font-bold text-gray-900">Question-based CTAs</h4>
-            <p className="text-xs text-green-600 font-medium mt-1">
+            <p className="text-xs text-[#00A63E] font-medium mt-1">
               Avg. Engagement: 9.8%
             </p>
           </div>
 
-          <div className="bg-[#effef1] p-4 rounded-xl border border-[#bbf7d0]">
+          <div className="p-4 rounded-xl border border-[#0000001A]">
             <div className="flex justify-between items-start mb-2">
               <span className="text-xs text-gray-500 uppercase">
                 Topic Cluster
               </span>
-              <span className="bg-white px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
+              <span className="bg-[#ECEEF2] px-2 py-0.5 rounded text-[10px] font-bold shadow-sm">
                 2 posts
               </span>
             </div>
             <h4 className="font-bold text-gray-900">Growth & Scaling</h4>
-            <p className="text-xs text-green-600 font-medium mt-1">
+            <p className="text-xs text-[#00A63E] font-medium mt-1">
               Avg. Engagement: 9.1%
             </p>
           </div>

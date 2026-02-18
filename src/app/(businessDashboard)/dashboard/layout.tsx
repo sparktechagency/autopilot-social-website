@@ -136,8 +136,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       }}
     >
       {/* TOP NAV */}
-      <div className="sticky top-20 z-30 mx-4">
-        <div className="px-4 sm:px-8 py-3.5 shadow-xl bg-linear-to-r from-[#0A0A0A] to-[#155DFC]">
+      <div className="sticky top-20 z-30 ">
+        <div className="px-4 lg:px-2 py-3.5 shadow-xl bg-linear-to-r from-[#0A0A0A] to-[#155DFC]">
           <div className="flex items-center max-w-7xl mx-auto">
             {/* Desktop tabs */}
             <div
@@ -150,7 +150,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   <Link
                     key={tab.href}
                     href={tab.href}
-                    className={`px-2 lg:px-8 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${active
+                    className={`px-4 lg:px-8 py-2 rounded-lg text-xs lg:text-sm font-medium transition-all duration-200 ${
+                      active
                         ? "bg-white text-[#191919] shadow-lg shadow-blue-500/25"
                         : "bg-[#FFFFFF3D] border border-[#E5E5EA] text-white hover:text-white hover:bg-white/10"
                       }`}

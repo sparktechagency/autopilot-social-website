@@ -38,19 +38,23 @@ const activities = [
 
 export default function ActivityFeed() {
   return (
-    <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 h-full">
-      <h3 className="text-lg font-bold text-gray-900 mb-6">Recent Activity</h3>
-      <div className="flex flex-col gap-6">
+    <div className="bg-white p-4 sm:p-6 rounded-3xl shadow-sm border border-gray-100 h-full w-full">
+      <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4 sm:mb-6">
+        Recent Activity
+      </h3>
+      <div className="flex flex-col gap-4 sm:gap-6">
         {activities.map((activity) => (
-          <div key={activity.id} className="flex gap-4">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${activity.bg} ${activity.color}`}>
-              <activity.icon size={18} />
+          <div key={activity.id} className="flex gap-3 sm:gap-4">
+            <div
+              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center shrink-0 ${activity.bg} ${activity.color}`}
+            >
+              <activity.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
             </div>
-            <div>
-              <p className="text-sm font-medium text-gray-800 leading-snug">
+            <div className="flex-1 min-w-0">
+              <p className="text-xs sm:text-sm font-medium text-gray-800 leading-snug">
                 {activity.text}
               </p>
-              <span className="text-xs text-gray-400 mt-1 block">
+              <span className="text-[10px] sm:text-xs text-gray-400 mt-1 block">
                 {activity.time}
               </span>
             </div>
