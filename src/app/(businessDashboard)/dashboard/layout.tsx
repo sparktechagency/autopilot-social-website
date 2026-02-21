@@ -20,7 +20,7 @@ const tabs = [
   { name: "Engagement", href: "/dashboard/engagement", icon: "◉" },
   { name: "Reviews", href: "/dashboard/reviews", icon: "★" },
   { name: "Team", href: "/dashboard/team", icon: "◎" },
-  { name: "Billing", href: "/dashboard/billing", icon: "◇" },
+  // { name: "Billing", href: "/dashboard/billing", icon: "◇" },
 ];
 
 // ─── Drawer nav item ───────────────────────────────────────────────────────────
