@@ -53,14 +53,14 @@ const LoginPage = () => {
                                 <Box
                                     sx={{
                                         position: 'relative',
-                                        width: 56,
-                                        height: 56,
+                                        width: 150,
+                                        height: 70,
                                         mx: 'auto',
                                         mb: 1,
                                     }}
                                 >
                                     <Image
-                                        src="/logo.png"
+                                        src="/Images/logo.png"
                                         alt="Whop Logo"
                                         fill
                                         style={{ objectFit: 'contain' }}
@@ -68,8 +68,8 @@ const LoginPage = () => {
                                     />
                                 </Box>
 
-                                <Typography variant="h5" fontWeight={700}>
-                                    Sign in to Whop
+                                <Typography variant="h6" fontWeight={500}>
+                                    Sign in to AMPSOCIAL
                                 </Typography>
                             </>
                         }
